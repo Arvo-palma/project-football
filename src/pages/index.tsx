@@ -1,7 +1,8 @@
+import HomeScreen from 'components/screens/home/home-screen'
 import { NextPage } from 'next/types'
 
-const Home: NextPage = () => {
-  return <h1>Hello World</h1>
+const HomeRoute: NextPage = () => {
+  return <HomeScreen />
 }
 
-export default Home
+export default HomeRoute
