@@ -36,7 +36,7 @@ const Header = ({ className, changeFeature }: HeaderProps) => {
           className={`${
             activeTab === 'matches' && 'border-b-2 border-white bg-green-800'
           }
-            p-3 text-center font-extralight text-xs text-white hover:bg-green-800 flex-grow`}
+            p-3 text-center font-light text-xs text-white hover:bg-green-800 flex-grow`}
         >
           PARTIDAS
           {/* <button onClick={() => changeFeature('games')}>PARTIDAS</button> */}
@@ -45,36 +45,38 @@ const Header = ({ className, changeFeature }: HeaderProps) => {
           className={`${
             activeTab === 'news' && 'border-b-2 border-white bg-green-800'
           }
-            p-3 text-center font-extralight text-xs text-white hover:bg-green-800 flex-grow`}
+            p-3 text-center font-light text-xs text-white hover:bg-green-800 flex-grow`}
         >
           NOTÍCIAS
         </Column>
-        <Column
+        <button
+          onClick={() => selectFeature('ranking')}
           className={`${
-            activeTab === 'ranking' && 'border-b-2 border-white bg-green-800'
+            activeTab === 'ranking' &&
+            'border-b-2 border-white bg-green-800 font-normal'
           }
-            p-3 text-center font-extralight text-xs text-white hover:bg-green-800 flex-grow`}
+            p-3 font-light text-center text-xs text-white hover:bg-green-800 flex-grow`}
         >
-          <button onClick={() => selectFeature('ranking')}>
-            CLASSIFICAÇÃO
-          </button>
-        </Column>
+          CLASSIFICAÇÃO
+        </button>
         <Column
           className={`${
             activeTab === 'statistics' && 'border-b-2 border-white bg-green-800'
           }
-            p-3 text-center font-extralight text-xs text-white hover:bg-green-800 flex-grow`}
+            p-3 text-center font-light text-xs text-white hover:bg-green-800 flex-grow`}
         >
           ESTATÍSTICAS
         </Column>
-        <Column
+        <button
+          onClick={() => selectFeature('players')}
           className={`${
-            activeTab === 'players' && 'border-b-2 border-white bg-green-800'
+            activeTab === 'players' &&
+            'border-b-2 border-white bg-green-800 font-normal'
           }
-            p-3 text-center font-extralight text-xs text-white hover:bg-green-800 flex-grow`}
+        p-3 text-center font-light text-xs text-white hover:bg-green-800 flex-grow`}
         >
-          <button onClick={() => selectFeature('players')}>JOGADORES</button>
-        </Column>
+          JOGADORES
+        </button>
       </Row>
     </div>
   )

@@ -104,7 +104,7 @@ const ScoreTable = ({}: ScoreTableProps) => {
                 />
               </TableBodyCell>
               <TableBodyCell
-                className={'flex-auto text-white font-light text-xs p-1'}
+                className={'flex-auto text-white font-light text-sm p-1'}
               >
                 {team.time.nome_popular}
               </TableBodyCell>
