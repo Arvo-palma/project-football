@@ -7,8 +7,15 @@ import { ArrowSmLeftIcon } from '@heroicons/react/outline'
 
 type HeaderProps = {
   className?: string
+  changeFeature: (feature: string) => void
 }
-const Header = ({ className }: HeaderProps) => {
+const Header = ({ className, changeFeature }: HeaderProps) => {
+  const [activeTab, setActiveTab] = React.useState('')
+
+  const selectFeature = (feature: string) => {
+    changeFeature(feature)
+    setActiveTab(feature)
+  }
   return (
     <div className={classNames('bg-green-900', className)}>
       <Row className="w-full justify-between">
@@ -25,16 +32,52 @@ const Header = ({ className }: HeaderProps) => {
         </Column>
       </Row>
       <Row className="w-full justify-evenly px-24">
-        <Column className={navItemStdClassName}>PARTIDAS</Column>
-        <Column className={navItemStdClassName}>NOTÍCIAS</Column>
-        <Column className={navItemStdClassName}>CLASSIFICAÇÃO</Column>
-        <Column className={navItemStdClassName}>ESTATÍSTICAS</Column>
-        <Column className={navItemStdClassName}>JOGADORES</Column>
+        <Column
+          className={`${
+            activeTab === 'matches' && 'border-b-2 border-white bg-green-800'
+          }
+            p-3 text-center font-extralight text-xs text-white hover:bg-green-800 flex-grow`}
+        >
+          PARTIDAS
+          {/* <button onClick={() => changeFeature('games')}>PARTIDAS</button> */}
+        </Column>
+        <Column
+          className={`${
+            activeTab === 'news' && 'border-b-2 border-white bg-green-800'
+          }
+            p-3 text-center font-extralight text-xs text-white hover:bg-green-800 flex-grow`}
+        >
+          NOTÍCIAS
+        </Column>
+        <Column
+          className={`${
+            activeTab === 'ranking' && 'border-b-2 border-white bg-green-800'
+          }
+            p-3 text-center font-extralight text-xs text-white hover:bg-green-800 flex-grow`}
+        >
+          <button onClick={() => selectFeature('ranking')}>
+            CLASSIFICAÇÃO
+          </button>
+        </Column>
+        <Column
+          className={`${
+            activeTab === 'statistics' && 'border-b-2 border-white bg-green-800'
+          }
+            p-3 text-center font-extralight text-xs text-white hover:bg-green-800 flex-grow`}
+        >
+          ESTATÍSTICAS
+        </Column>
+        <Column
+          className={`${
+            activeTab === 'players' && 'border-b-2 border-white bg-green-800'
+          }
+            p-3 text-center font-extralight text-xs text-white hover:bg-green-800 flex-grow`}
+        >
+          <button onClick={() => selectFeature('players')}>JOGADORES</button>
+        </Column>
       </Row>
     </div>
   )
 }
 
 export default Header
-
-const navItemStdClassName = 'p-3 font-extralight text-xs text-white'

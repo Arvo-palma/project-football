@@ -2,6 +2,7 @@ import axios from 'axios'
 import Card from 'components/toolkit/card/card'
 import Row from 'components/toolkit/row'
 import { classNames } from 'core/helpers/class-names'
+import { handleError } from 'core/helpers/handle-error'
 import { PlayerInfo } from 'core/types/player-info'
 import React from 'react'
 
@@ -13,8 +14,12 @@ const PlayersList = ({ className }: PlayersListProps) => {
   const playersURL = 'https://api.cartola.globo.com/mercado/destaques'
 
   const getPlayers = async () => {
-    const response = await axios.get(playersURL)
-    setData(response.data)
+    try {
+      const response = await axios.get(playersURL)
+      setData(response.data)
+    } catch (error) {
+      throw handleError(error)
+    }
   }
 
   React.useEffect(() => {
