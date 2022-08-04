@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import axios from 'axios'
 import CustomLine from 'components/toolkit/custom-line'
 import Table from 'components/toolkit/table/table'
@@ -6,7 +7,6 @@ import TableBodyCell from 'components/toolkit/table/table-body-cell'
 import TableHeadCell from 'components/toolkit/table/table-head-cell'
 import TableHeader from 'components/toolkit/table/table-header'
 import TableRow from 'components/toolkit/table/table-row'
-import { classNames } from 'core/helpers/class-names'
 import React from 'react'
 import { iconSrc } from './result-icon-src'
 
@@ -113,7 +113,7 @@ const ScoreTable = ({}: ScoreTableProps) => {
                 {team.saldo_gols}
               </TableBodyCell>
               <TableBodyCell className="p-1 w-24">
-                {team.ultimos_jogos.map((result, index) => (
+                {team.ultimos_jogos.map((result: string, index: number) => (
                   <div key={index} className="inline p-0.5">
                     <img
                       className="w-3 inline"
