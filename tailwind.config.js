@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: 'jit',
+  darkMode: 'class',
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
@@ -19,7 +20,7 @@ module.exports = {
         danger: 'rgb(var(--danger) / 1 )',
       },
       fontFamily: {
-        custom: ['ubuntu-mono', 'Ubuntu', 'sans-serif'],
+        custom: ['arial', 'sans-serif'],
       },
     },
   },
