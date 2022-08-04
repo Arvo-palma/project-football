@@ -1,4 +1,4 @@
-export type playerInfo = {
+export type PlayerInfo = {
   posicao: string
   posicao_abreviacao: string
   clube: string
