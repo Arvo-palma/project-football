@@ -5,17 +5,19 @@ import React from 'react'
 import { XIcon } from '@heroicons/react/solid'
 import { ArrowSmLeftIcon } from '@heroicons/react/outline'
 
-type DefaultHeaderProps = {
+type HeaderProps = {
   className?: string
 }
-const DefaultHeader = ({ className }: DefaultHeaderProps) => {
+const Header = ({ className }: HeaderProps) => {
   return (
     <div className={classNames('bg-green-900', className)}>
       <Row className="w-full justify-between">
         <Column className="text-white p-3">
           <Row>
             <ArrowSmLeftIcon className="h-7 w-7 ml-2" />
-            <span className="pl-1">Brasileirão Série B</span>
+            <span className="pl-1 font-light text-base">
+              Brasileirão Série B
+            </span>
           </Row>
         </Column>
         <Column className="text-white p-3">
@@ -33,6 +35,6 @@ const DefaultHeader = ({ className }: DefaultHeaderProps) => {
   )
 }
 
-export default DefaultHeader
+export default Header
 
-const navItemStdClassName = 'p-3 font-extralight text-sm text-white'
+const navItemStdClassName = 'p-3 font-extralight text-xs text-white'
