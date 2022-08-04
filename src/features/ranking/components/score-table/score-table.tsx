@@ -1,12 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 import axios from 'axios'
+import Column from 'components/toolkit/column'
 import CustomLine from 'components/toolkit/custom-line'
+import Spinner from 'components/toolkit/spinner'
 import Table from 'components/toolkit/table/table'
 import TableBody from 'components/toolkit/table/table-body'
 import TableBodyCell from 'components/toolkit/table/table-body-cell'
 import TableHeadCell from 'components/toolkit/table/table-head-cell'
 import TableHeader from 'components/toolkit/table/table-header'
 import TableRow from 'components/toolkit/table/table-row'
+import { classNames } from 'core/helpers/class-names'
+import { handleError } from 'core/helpers/handle-error'
+import { TeamInfo } from 'core/types/team-info'
 import React from 'react'
 import { iconSrc } from './result-icon-src'
 
@@ -22,8 +27,12 @@ const ScoreTable = ({}: ScoreTableProps) => {
     },
   }
   const getScores = async () => {
-    const response = await axios.get(tableURL, requestConfig)
-    setData(response.data)
+    try {
+      const response = await axios.get(tableURL, requestConfig)
+      setData(response.data)
+    } catch (error) {
+      throw handleError(error)
+    }
   }
 
   React.useEffect(() => {
@@ -46,11 +55,18 @@ const ScoreTable = ({}: ScoreTableProps) => {
   }
 
   return data.length === 0 ? (
-    <span>Carregando...</span>
+    <Column className={classNames('items-center')}>
+      <Spinner color="black" size={100} />
+      Carregando...
+    </Column>
   ) : (
     <Table className="w-full table-fixed mt-3">
       <TableHeader>
-        <TableRow className={tableRowStdClassName}>
+        <TableRow
+          className={
+            'flex-row inline-flex w-full px-2 self-center items-center'
+          }
+        >
           <TableHeadCell className="text-white text-left text-opacity-60 font-extralight text-xs flex-auto">
             Clubes
           </TableHeadCell>
@@ -69,10 +85,14 @@ const ScoreTable = ({}: ScoreTableProps) => {
       </TableHeader>
       <CustomLine className="mr-4" />
       <TableBody>
-        {data.map((team) => (
+        {data.map((team: TeamInfo) => (
           <div key={team.time.time_id} className="pt-2">
             {team.posicao !== 1 && <CustomLine className="mx-4" />}
-            <TableRow className={tableRowStdClassName}>
+            <TableRow
+              className={
+                'flex-row inline-flex w-full px-2 self-center items-center hover:bg-black'
+              }
+            >
               <TableBodyCell className={tableBodyItemStdClassName}>
                 {team.posicao}
               </TableBodyCell>
@@ -135,5 +155,3 @@ export default ScoreTable
 
 const tableBodyItemStdClassName =
   'text-white text-opacity-60 font-light text-sm p-1 w-6'
-const tableRowStdClassName =
-  'flex-row inline-flex w-full px-2 self-center items-center'
