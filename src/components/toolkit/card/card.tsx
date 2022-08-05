@@ -15,7 +15,7 @@ const Card = ({ className, playerInfo }: CardProps) => {
   return (
     <Column
       className={classNames(
-        'border border-gray-300 border-opacity-50 rounded-xl overflow-hidden',
+        'border border-gray-300 border-opacity-50 rounded-xl relative overflow-hidden',
         className
       )}
     >
@@ -24,20 +24,22 @@ const Card = ({ className, playerInfo }: CardProps) => {
         alt={`${playerInfo.Atleta.apelido_abreviado} image`}
         className="h-1/2 object-cover w-full"
       />
-      <div className="h-1/2 w-full player-card">
-        <Row className="text-white font-thin text-opacity-90 text-sm p-1">
+      <div className="h-1/2 w-full player-card-info justify-items-end">
+        <Row className="text-white font-light text-sm p-2">
           {playerInfo.Atleta.apelido}
         </Row>
-        <Row className="text-white font-thin text-opacity-70 text-xs p-1 pb-2">
+        <Row className="text-white font-light text-opacity-70 text-xs pl-2 pb-2">
           {playerInfo.posicao}
         </Row>
-        <Row className="text-white font-thin text-opacity-70 text-xs px-2 py-1 gap-1 truncate">
+        <Row className="text-white text-opacity-70 text-xs px-2 py-1 gap-1 bottom-0 absolute truncate self-end">
           <img
             src={playerInfo.escudo_clube}
             alt={`${playerInfo.clube} shield`}
-            className="w-5"
+            className="w-4"
           />
-          <span className="pl-1">{playerInfo.clube_nome}</span>
+          <span className="pl-1 truncate font-light ">
+            {playerInfo.clube_nome}
+          </span>
         </Row>
       </div>
     </Column>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer utilities {
-  .player-card {
+  .player-card-info {
     max-width: 100px;
   }
 }
