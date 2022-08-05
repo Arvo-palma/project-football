@@ -4,6 +4,8 @@ import { classNames } from 'core/helpers/class-names'
 import React from 'react'
 import { XIcon } from '@heroicons/react/solid'
 import { ArrowSmLeftIcon } from '@heroicons/react/outline'
+import Link from 'components/toolkit/link'
+import { googleLink } from 'core/helpers/google-link'
 
 type HeaderProps = {
   className?: string
@@ -21,14 +23,18 @@ const Header = ({ className, changeFeature }: HeaderProps) => {
       <Row className="w-full justify-between">
         <Column className="text-white p-3">
           <Row>
-            <ArrowSmLeftIcon className="h-7 w-7 ml-2" />
+            <Link href={googleLink}>
+              <ArrowSmLeftIcon className="h-7 w-7 ml-2" />
+            </Link>
             <span className="pl-1 font-medium text-base">
               Brasileirão Série B
             </span>
           </Row>
         </Column>
         <Column className="text-white p-3">
-          <XIcon className="h-6 w-6" />
+          <Link href={googleLink}>
+            <XIcon className="h-6 w-6" />
+          </Link>
         </Column>
       </Row>
       <Row className="w-full justify-evenly px-24">

@@ -1,5 +1,6 @@
 // import { Column } from 'components/toolkit'
-import { Row } from 'components/toolkit'
+import { Column, Row } from 'components/toolkit'
+import Link from 'components/toolkit/link'
 import { mockedMatchesInfo } from 'core/helpers'
 import React from 'react'
 import MatchCard from './match-card'
@@ -9,7 +10,7 @@ type MatchesListProps = {
 }
 const MatchesList = ({}: MatchesListProps) => {
   return (
-    <React.Fragment>
+    <Column>
       <Row className="p-3 font-light text-sm bg-opacity-30 bg-black">
         Rodada 21 de 38
       </Row>
@@ -22,7 +23,7 @@ const MatchesList = ({}: MatchesListProps) => {
           />
         ))}
       </div>
-    </React.Fragment>
+    </Column>
   )
 }
 

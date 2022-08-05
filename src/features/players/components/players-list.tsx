@@ -4,6 +4,7 @@ import Row from 'components/toolkit/row'
 import { classNames, handleError } from 'core/helpers'
 import { PlayerInfo } from 'core/types/player-info'
 import React from 'react'
+import Link from 'components/toolkit/link'
 
 type PlayersListProps = {
   className?: string
@@ -26,9 +27,15 @@ const PlayersList = ({ className }: PlayersListProps) => {
   }, [])
 
   return (
-    <Row className={classNames('flex-wrap p-1 gap-2', className)}>
+    <Row className={classNames('flex-wrap py-1 pl-1', className)}>
       {data.map((player: PlayerInfo) => (
-        <PlayerCard key={player.Atleta.atleta_id} playerInfo={player} />
+        <Link
+          key={player.Atleta.atleta_id}
+          href={`https://www.google.com/search?cs=1&q=${player.Atleta.nome}`}
+          className="flex py-1"
+        >
+          <PlayerCard playerInfo={player} />
+        </Link>
       ))}
     </Row>
   )

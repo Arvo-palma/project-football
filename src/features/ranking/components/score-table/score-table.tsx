@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import axios from 'axios'
 import { Column, CustomLine, Spinner } from 'components/toolkit'
+import Link from 'components/toolkit/link'
 import {
   Table,
   TableBody,
@@ -77,7 +78,10 @@ const ScoreTable = ({}: ScoreTableProps) => {
       <CustomLine className="mr-4" />
       <TableBody>
         {data.map((team: TeamInfo) => (
-          <React.Fragment key={team.time.time_id}>
+          <Link
+            key={team.time.time_id}
+            href={`https://www.google.com/search?cs=1&q=${team.time.nome_popular}`}
+          >
             {team.posicao !== 1 && <CustomLine className="mx-4" />}
             <div className="py-2 hover:bg-black">
               <TableRow className="table-row">
@@ -131,7 +135,7 @@ const ScoreTable = ({}: ScoreTableProps) => {
                 </TableBodyCell>
               </TableRow>
             </div>
-          </React.Fragment>
+          </Link>
         ))}
       </TableBody>
     </Table>
