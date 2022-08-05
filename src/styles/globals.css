@@ -19,6 +19,18 @@
     --tw-border-opacity: 1;
     border-color: rgba(255, 255, 255, var(--tw-border-opacity));
   }
+
+  .news-card {
+    --tw-border-opacity: 1;
+    border-color: rgba(255, 255, 255, var(--tw-border-opacity));
+    border-width: 1px;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    --tw-border-opacity: 0.1;
+    justify-content: space-between;
+    gap: 0.25rem;
+  }
+
   .player-card-info {
     max-width: 100px;
   }
