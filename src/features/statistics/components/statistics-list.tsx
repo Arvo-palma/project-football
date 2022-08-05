@@ -9,16 +9,16 @@ type StatisticsListProps = {
 const StatisticsList = ({ className }: StatisticsListProps) => {
   return (
     <Column className={className}>
-      <Row>Gols</Row>
+      <Row className="p-3 font-normal text-sm">Gols</Row>
       <Row>
-        <Column>Jogador</Column>
-        <Column>Gols</Column>
+        <Column className="p-3 font-light text-sm flex-grow">Jogador</Column>
+        <Column className="p-3 font-light text-sm">Gols</Column>
       </Row>
       {mockStatistics.map((stats, index) => (
-        <Row key={index}>
-          <CustomLine />
+        <Column key={index}>
+          <CustomLine className="mx-4" />
           <PlayerRow playerStats={stats} />
-        </Row>
+        </Column>
       ))}
     </Column>
   )
