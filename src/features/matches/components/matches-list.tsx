@@ -1,6 +1,5 @@
 // import { Column } from 'components/toolkit'
 import { Column, Row } from 'components/toolkit'
-import Link from 'components/toolkit/link'
 import { mockedMatchesInfo } from 'core/helpers'
 import React from 'react'
 import MatchCard from './match-card'

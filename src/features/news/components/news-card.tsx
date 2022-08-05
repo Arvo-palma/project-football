@@ -12,12 +12,7 @@ type NewsCardProps = {
 const NewsCard = ({ className, news }: NewsCardProps) => {
   return (
     <Link href={`https://www.google.com/search?cs=1&q=${news.title}`}>
-      <Row
-        className={classNames(
-          'border-white border p-5 rounded-xl border-opacity-10 justify-between gap-1',
-          className
-        )}
-      >
+      <Row className={classNames('news-card', className)}>
         <Column>
           <Row className="text-blue-300 pb-1 hover:underline">{news.title}</Row>
           <Row className="text-sm text-opacity-70 text-gray-300">

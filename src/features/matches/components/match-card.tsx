@@ -10,6 +10,7 @@ type MatchCardProps = {
   className?: string
 }
 const MatchCard = ({ className, match }: MatchCardProps) => {
+  const googleMatchURL = `https://www.google.com/search?cs=1&q=${match.time1}x${match.time2}`
   return (
     <Row
       className={classNames(
@@ -17,10 +18,7 @@ const MatchCard = ({ className, match }: MatchCardProps) => {
         className
       )}
     >
-      <Link
-        href={`https://www.google.com/search?cs=1&q=${match.time1}x${match.time2}`}
-        className="w-full flex"
-      >
+      <Link href={googleMatchURL} className="w-full flex">
         <Column className="w-2/3">
           <Row>
             <img
