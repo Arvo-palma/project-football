@@ -32,15 +32,15 @@ const Header = ({ className, changeFeature }: HeaderProps) => {
         </Column>
       </Row>
       <Row className="w-full justify-evenly px-24">
-        <Column
+        <button
           className={`${
             activeTab === 'matches' && 'border-b-2 border-white bg-green-800'
           }
             p-3 text-center font-light text-xs text-white hover:bg-green-800 flex-grow`}
+          onClick={() => selectFeature('matches')}
         >
           PARTIDAS
-          {/* <button onClick={() => changeFeature('games')}>PARTIDAS</button> */}
-        </Column>
+        </button>
         <Column
           className={`${
             activeTab === 'news' && 'border-b-2 border-white bg-green-800'
