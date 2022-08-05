@@ -41,14 +41,15 @@ const Header = ({ className, changeFeature }: HeaderProps) => {
         >
           PARTIDAS
         </button>
-        <Column
+        <button
+          onClick={() => selectFeature('news')}
           className={`${
             activeTab === 'news' && 'border-b-2 border-white bg-green-800'
           }
             p-3 text-center font-light text-xs text-white hover:bg-green-800 flex-grow`}
         >
           NOTÍCIAS
-        </Column>
+        </button>
         <button
           onClick={() => selectFeature('ranking')}
           className={`${
