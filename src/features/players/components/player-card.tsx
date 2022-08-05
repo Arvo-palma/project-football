@@ -4,11 +4,11 @@ import { PlayerInfo } from 'core/types/player-info'
 import React from 'react'
 import { Column, Row } from 'components/toolkit'
 
-type CardProps = {
+type PlayerCardProps = {
   playerInfo: PlayerInfo
   className?: string
 }
-const Card = ({ className, playerInfo }: CardProps) => {
+const PlayerCard = ({ className, playerInfo }: PlayerCardProps) => {
   return (
     <Column
       className={classNames(
@@ -43,4 +43,4 @@ const Card = ({ className, playerInfo }: CardProps) => {
   )
 }
 
-export default Card
+export default PlayerCard
