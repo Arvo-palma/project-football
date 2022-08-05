@@ -12,7 +12,7 @@ const MatchCard = ({ className, match }: MatchCardProps) => {
   return (
     <Row
       className={classNames(
-        'border border-gray-500 border-opacity-10 p-5 hover:bg-black bg-opacity-80',
+        'match-card-border  hover:bg-black bg-opacity-80',
         className
       )}
     >

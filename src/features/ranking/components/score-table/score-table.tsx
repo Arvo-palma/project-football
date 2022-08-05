@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
 import axios from 'axios'
 import { Column, CustomLine, Spinner } from 'components/toolkit'
@@ -61,23 +62,14 @@ const ScoreTable = ({}: ScoreTableProps) => {
   ) : (
     <Table className="w-full table-fixed mt-3">
       <TableHeader>
-        <TableRow
-          className={
-            'flex-row inline-flex w-full px-2 self-center items-center'
-          }
-        >
-          <TableHeadCell className="text-white text-left text-opacity-60 font-light text-xs flex-auto">
-            Clubes
-          </TableHeadCell>
+        <TableRow className="table-row">
+          <TableHeadCell className="table-head-club-item">Clubes</TableHeadCell>
           {headCells.map((info) => (
-            <TableHeadCell
-              key={info}
-              className="text-white text-center text-opacity-60 font-light text-xs pb-1 w-6"
-            >
+            <TableHeadCell key={info} className="table-head-item pb-1 w-8">
               {info}
             </TableHeadCell>
           ))}
-          <TableHeadCell className="text-white text-center text-opacity-60 font-light text-xs w-24 ">
+          <TableHeadCell className="table-head-item w-24 ">
             Últimas cinco
           </TableHeadCell>
         </TableRow>
@@ -85,65 +77,61 @@ const ScoreTable = ({}: ScoreTableProps) => {
       <CustomLine className="mr-4" />
       <TableBody>
         {data.map((team: TeamInfo) => (
-          <div key={team.time.time_id} className="pt-2">
+          <React.Fragment key={team.time.time_id}>
             {team.posicao !== 1 && <CustomLine className="mx-4" />}
-            <TableRow
-              className={
-                'flex-row inline-flex w-full px-2 self-center items-center hover:bg-black'
-              }
-            >
-              <TableBodyCell className={tableBodyItemStdClassName}>
-                {team.posicao}
-              </TableBodyCell>
-              <TableBodyCell className={tableBodyItemStdClassName}>
-                <img
-                  src={team.time.escudo}
-                  alt={`${team.time.sigla} symbol`}
-                  className="w-5"
-                />
-              </TableBodyCell>
-              <TableBodyCell
-                className={'flex-auto text-white font-light text-sm p-1'}
-              >
-                {team.time.nome_popular}
-              </TableBodyCell>
-              <TableBodyCell className={tableBodyItemStdClassName}>
-                {team.pontos}
-              </TableBodyCell>
-              <TableBodyCell className={tableBodyItemStdClassName}>
-                {team.jogos}
-              </TableBodyCell>
-              <TableBodyCell className={tableBodyItemStdClassName}>
-                {team.vitorias}
-              </TableBodyCell>
-              <TableBodyCell className={tableBodyItemStdClassName}>
-                {team.empates}
-              </TableBodyCell>
-              <TableBodyCell className={tableBodyItemStdClassName}>
-                {team.derrotas}
-              </TableBodyCell>
-              <TableBodyCell className={tableBodyItemStdClassName}>
-                {team.gols_pro}
-              </TableBodyCell>
-              <TableBodyCell className={tableBodyItemStdClassName}>
-                {team.gols_contra}
-              </TableBodyCell>
-              <TableBodyCell className={`${tableBodyItemStdClassName}`}>
-                {team.saldo_gols}
-              </TableBodyCell>
-              <TableBodyCell className="p-1 w-24">
-                {team.ultimos_jogos.map((result: string, index: number) => (
-                  <div key={index} className="inline p-0.5">
-                    <img
-                      className="w-3 inline"
-                      src={resultIcon(result)}
-                      alt={result}
-                    />
-                  </div>
-                ))}
-              </TableBodyCell>
-            </TableRow>
-          </div>
+            <div className="py-2 hover:bg-black">
+              <TableRow className="table-row">
+                <TableBodyCell className="table-body-item">
+                  {team.posicao}
+                </TableBodyCell>
+                <TableBodyCell className="table-body-item">
+                  <img
+                    src={team.time.escudo}
+                    alt={`${team.time.sigla} symbol`}
+                    className="w-6"
+                  />
+                </TableBodyCell>
+                <TableBodyCell className={'table-body-name-item'}>
+                  {team.time.nome_popular}
+                </TableBodyCell>
+                <TableBodyCell className="table-body-item">
+                  {team.pontos}
+                </TableBodyCell>
+                <TableBodyCell className="table-body-item">
+                  {team.jogos}
+                </TableBodyCell>
+                <TableBodyCell className="table-body-item">
+                  {team.vitorias}
+                </TableBodyCell>
+                <TableBodyCell className="table-body-item">
+                  {team.empates}
+                </TableBodyCell>
+                <TableBodyCell className="table-body-item">
+                  {team.derrotas}
+                </TableBodyCell>
+                <TableBodyCell className="table-body-item">
+                  {team.gols_pro}
+                </TableBodyCell>
+                <TableBodyCell className="table-body-item">
+                  {team.gols_contra}
+                </TableBodyCell>
+                <TableBodyCell className="table-body-item">
+                  {team.saldo_gols}
+                </TableBodyCell>
+                <TableBodyCell className="p-1 w-24">
+                  {team.ultimos_jogos.map((result: string, index: number) => (
+                    <div key={index} className="inline p-0.5">
+                      <img
+                        className="w-3 inline"
+                        src={resultIcon(result)}
+                        alt={result}
+                      />
+                    </div>
+                  ))}
+                </TableBodyCell>
+              </TableRow>
+            </div>
+          </React.Fragment>
         ))}
       </TableBody>
     </Table>
@@ -151,6 +139,3 @@ const ScoreTable = ({}: ScoreTableProps) => {
 }
 
 export default ScoreTable
-
-const tableBodyItemStdClassName =
-  'text-white text-opacity-60 font-light text-sm p-1 w-6'
