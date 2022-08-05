@@ -10,12 +10,12 @@ type HomeScreenProps = {
 const HomeScreen = ({}: HomeScreenProps) => {
   const [feature, setFeature] = React.useState('matches')
   return (
-    <main className="dark w-full bg-black bg-opacity-80 flex flex-col min-h-screen min-w-full">
+    <main className="dark main">
       <Header
         className={classNames('border-b-2 border-black')}
         changeFeature={setFeature}
       />
-      <CentralContainer className="w-4/5 bg-black bg-opacity-40 mx-auto min-h-screen items-center">
+      <CentralContainer className="central-container">
         <Switcher feature={feature} />
       </CentralContainer>
     </main>

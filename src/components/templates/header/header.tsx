@@ -39,49 +39,37 @@ const Header = ({ className, changeFeature }: HeaderProps) => {
       </Row>
       <Row className="w-full justify-evenly px-24">
         <button
-          className={`${
-            activeTab === 'matches' && 'border-b-2 border-white bg-green-800'
-          }
-            p-3 text-center font-normal text-xs text-white hover:bg-green-800 flex-grow`}
+          className={`${activeTab === 'matches' && 'active-tab bg-green-800'}
+          tab hover:bg-green-800`}
           onClick={() => selectFeature('matches')}
         >
           PARTIDAS
         </button>
         <button
           onClick={() => selectFeature('news')}
-          className={`${
-            activeTab === 'news' && 'border-b-2 border-white bg-green-800'
-          }
-            p-3 text-center font-normal text-xs text-white hover:bg-green-800 flex-grow`}
+          className={`${activeTab === 'news' && 'active-tab bg-green-800'}
+          tab hover:bg-green-800`}
         >
           NOTÍCIAS
         </button>
         <button
           onClick={() => selectFeature('ranking')}
-          className={`${
-            activeTab === 'ranking' &&
-            'border-b-2 border-white bg-green-800 font-normal'
-          }
-            p-3 font-normal text-center text-xs text-white hover:bg-green-800 flex-grow`}
+          className={`${activeTab === 'ranking' && 'active-tab bg-green-800'}
+          tab hover:bg-green-800`}
         >
           CLASSIFICAÇÃO
         </button>
         <button
           onClick={() => selectFeature('statistics')}
-          className={`${
-            activeTab === 'statistics' && 'border-b-2 border-white bg-green-800'
-          }
-            p-3 text-center font-normal text-xs text-white hover:bg-green-800 flex-grow`}
+          className={`${activeTab === 'statistics' && 'active-tab bg-green-800'}
+          tab hover:bg-green-800`}
         >
           ESTATÍSTICAS
         </button>
         <button
           onClick={() => selectFeature('players')}
-          className={`${
-            activeTab === 'players' &&
-            'border-b-2 border-white bg-green-800 font-normal'
-          }
-        p-3 text-center font-normal text-xs text-white hover:bg-green-800 flex-grow`}
+          className={`${activeTab === 'players' && 'active-tab bg-green-800'}
+          tab hover:bg-green-800`}
         >
           JOGADORES
         </button>
