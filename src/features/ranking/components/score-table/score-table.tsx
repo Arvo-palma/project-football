@@ -42,6 +42,8 @@ const ScoreTable = ({}: ScoreTableProps) => {
 
   const headCells = ['Pts', 'PJ', 'VIT', 'E', 'DER', 'GP', 'GC', 'SG']
 
+  const hiddenInLowScreen = ['E', 'DER', 'GP', 'GC']
+
   const resultIcon = (result: string) => {
     switch (result) {
       case 'v':
@@ -66,7 +68,12 @@ const ScoreTable = ({}: ScoreTableProps) => {
         <TableRow className="table-row">
           <TableHeadCell className="table-head-club-item">Clubes</TableHeadCell>
           {headCells.map((info) => (
-            <TableHeadCell key={info} className="table-head-item pb-1 w-8">
+            <TableHeadCell
+              key={info}
+              className={`table-head-item pb-1 w-8 sm:inline ${
+                hiddenInLowScreen.includes(info) && 'hidden'
+              }`}
+            >
               {info}
             </TableHeadCell>
           ))}
@@ -107,16 +114,16 @@ const ScoreTable = ({}: ScoreTableProps) => {
                 <TableBodyCell className="table-body-item">
                   {team.vitorias}
                 </TableBodyCell>
-                <TableBodyCell className="table-body-item">
+                <TableBodyCell className="table-body-item sm:inline hidden">
                   {team.empates}
                 </TableBodyCell>
-                <TableBodyCell className="table-body-item">
+                <TableBodyCell className="table-body-item sm:inline hidden">
                   {team.derrotas}
                 </TableBodyCell>
-                <TableBodyCell className="table-body-item">
+                <TableBodyCell className="table-body-item sm:inline hidden">
                   {team.gols_pro}
                 </TableBodyCell>
-                <TableBodyCell className="table-body-item">
+                <TableBodyCell className="table-body-item sm:inline hidden">
                   {team.gols_contra}
                 </TableBodyCell>
                 <TableBodyCell className="table-body-item">
