@@ -1,11 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import { classNames } from 'core/helpers/class-names'
-import { defaultImage } from 'core/helpers/default-image'
-import { examplePlayerImg } from 'core/helpers/example-player-image'
+import { classNames, defaultImage, examplePlayerImg } from 'core/helpers'
 import { PlayerInfo } from 'core/types/player-info'
 import React from 'react'
-import Column from '../column'
-import Row from '../row'
+import { Column, Row } from 'components/toolkit'
 
 type CardProps = {
   playerInfo: PlayerInfo

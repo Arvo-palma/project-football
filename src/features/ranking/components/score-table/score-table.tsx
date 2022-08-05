@@ -1,16 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import axios from 'axios'
-import Column from 'components/toolkit/column'
-import CustomLine from 'components/toolkit/custom-line'
-import Spinner from 'components/toolkit/spinner'
-import Table from 'components/toolkit/table/table'
-import TableBody from 'components/toolkit/table/table-body'
-import TableBodyCell from 'components/toolkit/table/table-body-cell'
-import TableHeadCell from 'components/toolkit/table/table-head-cell'
-import TableHeader from 'components/toolkit/table/table-header'
-import TableRow from 'components/toolkit/table/table-row'
-import { classNames } from 'core/helpers/class-names'
-import { handleError } from 'core/helpers/handle-error'
+import { Column, CustomLine, Spinner } from 'components/toolkit'
+import {
+  Table,
+  TableBody,
+  TableBodyCell,
+  TableHeadCell,
+  TableHeader,
+  TableRow,
+} from 'components/toolkit/table'
+import { classNames, handleError } from 'core/helpers'
 import { TeamInfo } from 'core/types/team-info'
 import React from 'react'
 import { iconSrc } from './result-icon-src'
@@ -67,18 +66,18 @@ const ScoreTable = ({}: ScoreTableProps) => {
             'flex-row inline-flex w-full px-2 self-center items-center'
           }
         >
-          <TableHeadCell className="text-white text-left text-opacity-60 font-extralight text-xs flex-auto">
+          <TableHeadCell className="text-white text-left text-opacity-60 font-light text-xs flex-auto">
             Clubes
           </TableHeadCell>
           {headCells.map((info) => (
             <TableHeadCell
               key={info}
-              className="text-white text-center text-opacity-60 font-extralight text-xs pb-1 w-6"
+              className="text-white text-center text-opacity-60 font-light text-xs pb-1 w-6"
             >
               {info}
             </TableHeadCell>
           ))}
-          <TableHeadCell className="text-white text-center text-opacity-60 font-extralight text-xs w-24 ">
+          <TableHeadCell className="text-white text-center text-opacity-60 font-light text-xs w-24 ">
             Últimas cinco
           </TableHeadCell>
         </TableRow>

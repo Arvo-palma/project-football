@@ -1,4 +1,4 @@
-export const mockedPlayerInfo = {
+export const mockedMatchesInfo = {
   posicao: 'Atacante',
   posicao_abreviacao: 'ATA',
   clube: 'FLU',
