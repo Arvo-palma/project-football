@@ -54,6 +54,14 @@
     padding: 0.25rem;
     flex: 1 1 auto;
   }
+
+  .match-card-border {
+    border-width: 1px;
+    --tw-border-opacity: 1;
+    border-color: rgba(107, 114, 128, var(--tw-border-opacity));
+    --tw-border-opacity: 0.1;
+    padding: 1.25rem;
+  }
 }
 
 @layer base {
