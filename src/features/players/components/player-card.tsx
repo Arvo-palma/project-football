@@ -12,7 +12,7 @@ const PlayerCard = ({ className, playerInfo }: PlayerCardProps) => {
   return (
     <Column
       className={classNames(
-        'border border-gray-300 border-opacity-50 rounded-xl relative overflow-hidden',
+        'border border-gray-300 border-opacity-10 rounded-xl relative overflow-hidden',
         className
       )}
     >

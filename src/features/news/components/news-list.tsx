@@ -1,5 +1,5 @@
 import { Column } from 'components/toolkit'
-import { mockNews } from 'core/helpers/mock-news'
+import { classNames, mockNews } from 'core/helpers'
 import React from 'react'
 import NewsCard from './news-card'
 
@@ -8,7 +8,7 @@ type NewsListProps = {
 }
 const NewsList = ({ className }: NewsListProps) => {
   return (
-    <Column className={className}>
+    <Column className={classNames('p-8 gap-2', className)}>
       {mockNews.map((news, index) => (
         <NewsCard key={index} news={news} />
       ))}

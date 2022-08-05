@@ -19,7 +19,7 @@ const Switcher = ({ feature }: SwitcherProps) => {
       case 'players':
         return <PlayersList />
       default:
-        return <ScoreTable />
+        return <MatchesList />
     }
   }
   return <div className="flex-auto w-full">{selectFeature(feature)}</div>
