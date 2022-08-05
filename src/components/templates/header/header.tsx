@@ -60,14 +60,15 @@ const Header = ({ className, changeFeature }: HeaderProps) => {
         >
           CLASSIFICAÇÃO
         </button>
-        <Column
+        <button
+          onClick={() => selectFeature('statistics')}
           className={`${
             activeTab === 'statistics' && 'border-b-2 border-white bg-green-800'
           }
             p-3 text-center font-light text-xs text-white hover:bg-green-800 flex-grow`}
         >
           ESTATÍSTICAS
-        </Column>
+        </button>
         <button
           onClick={() => selectFeature('players')}
           className={`${
