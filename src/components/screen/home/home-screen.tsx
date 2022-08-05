@@ -8,7 +8,7 @@ type HomeScreenProps = {
   className?: string
 }
 const HomeScreen = ({}: HomeScreenProps) => {
-  const [feature, setFeature] = React.useState('ranking')
+  const [feature, setFeature] = React.useState('matches')
   return (
     <main className="dark w-full bg-black bg-opacity-80 flex flex-col min-h-screen min-w-full">
       <Header
