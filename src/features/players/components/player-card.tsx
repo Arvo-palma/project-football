@@ -28,7 +28,7 @@ const PlayerCard = ({ className, playerInfo }: PlayerCardProps) => {
         <Row className="text-white font-light text-opacity-70 text-xs pl-2 pb-2">
           {playerInfo.posicao}
         </Row>
-        <Row className="text-white text-opacity-70 text-xs px-2 py-1 gap-1 bottom-0 absolute truncate self-end">
+        <Row className="badge-container">
           <img
             src={playerInfo.escudo_clube}
             alt={`${playerInfo.clube} shield`}
