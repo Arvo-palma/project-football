@@ -22,7 +22,7 @@ const Header = ({ className, changeFeature }: HeaderProps) => {
         <Column className="text-white p-3">
           <Row>
             <ArrowSmLeftIcon className="h-7 w-7 ml-2" />
-            <span className="pl-1 font-light text-base">
+            <span className="pl-1 font-medium text-base">
               Brasileirão Série B
             </span>
           </Row>
@@ -36,7 +36,7 @@ const Header = ({ className, changeFeature }: HeaderProps) => {
           className={`${
             activeTab === 'matches' && 'border-b-2 border-white bg-green-800'
           }
-            p-3 text-center font-light text-xs text-white hover:bg-green-800 flex-grow`}
+            p-3 text-center font-normal text-xs text-white hover:bg-green-800 flex-grow`}
           onClick={() => selectFeature('matches')}
         >
           PARTIDAS
@@ -46,7 +46,7 @@ const Header = ({ className, changeFeature }: HeaderProps) => {
           className={`${
             activeTab === 'news' && 'border-b-2 border-white bg-green-800'
           }
-            p-3 text-center font-light text-xs text-white hover:bg-green-800 flex-grow`}
+            p-3 text-center font-normal text-xs text-white hover:bg-green-800 flex-grow`}
         >
           NOTÍCIAS
         </button>
@@ -56,25 +56,26 @@ const Header = ({ className, changeFeature }: HeaderProps) => {
             activeTab === 'ranking' &&
             'border-b-2 border-white bg-green-800 font-normal'
           }
-            p-3 font-light text-center text-xs text-white hover:bg-green-800 flex-grow`}
+            p-3 font-normal text-center text-xs text-white hover:bg-green-800 flex-grow`}
         >
           CLASSIFICAÇÃO
         </button>
-        <Column
+        <button
+          onClick={() => selectFeature('statistics')}
           className={`${
             activeTab === 'statistics' && 'border-b-2 border-white bg-green-800'
           }
-            p-3 text-center font-light text-xs text-white hover:bg-green-800 flex-grow`}
+            p-3 text-center font-normal text-xs text-white hover:bg-green-800 flex-grow`}
         >
           ESTATÍSTICAS
-        </Column>
+        </button>
         <button
           onClick={() => selectFeature('players')}
           className={`${
             activeTab === 'players' &&
             'border-b-2 border-white bg-green-800 font-normal'
           }
-        p-3 text-center font-light text-xs text-white hover:bg-green-800 flex-grow`}
+        p-3 text-center font-normal text-xs text-white hover:bg-green-800 flex-grow`}
         >
           JOGADORES
         </button>

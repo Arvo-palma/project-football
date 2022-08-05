@@ -2,6 +2,7 @@ import MatchesList from 'features/matches/components/matches-list'
 import NewsList from 'features/news/components/news-list'
 import PlayersList from 'features/players/components/players-list'
 import ScoreTable from 'features/ranking/components/score-table/score-table'
+import StatisticsList from 'features/statistics/components/statistics-list'
 import React from 'react'
 
 type SwitcherProps = {
@@ -16,6 +17,8 @@ const Switcher = ({ feature }: SwitcherProps) => {
         return <NewsList />
       case 'ranking':
         return <ScoreTable />
+      case 'statistics':
+        return <StatisticsList />
       case 'players':
         return <PlayersList />
       default:
