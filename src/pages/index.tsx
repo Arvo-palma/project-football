@@ -1,4 +1,4 @@
-import HomeScreen from 'components/screens/home/home-screen'
+import HomeScreen from 'components/screen/home/home-screen'
 import { NextPage } from 'next/types'
 
 const HomeRoute: NextPage = () => {
