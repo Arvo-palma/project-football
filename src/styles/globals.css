@@ -6,6 +6,54 @@
   .player-card-info {
     max-width: 100px;
   }
+  .table-row {
+    flex-direction: row;
+    display: inline-flex;
+    width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    align-self: center;
+    align-items: center;
+  }
+
+  .table-head-item {
+    color: rgba(255, 255, 255, var(--tw-text-opacity));
+    text-align: center;
+    font-weight: 300;
+    --tw-text-opacity: 0.6;
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .table-head-club-item {
+    color: rgba(255, 255, 255, var(--tw-text-opacity));
+    text-align: left;
+    font-weight: 300;
+    --tw-text-opacity: 0.6;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    flex: 1 1 auto;
+  }
+
+  .table-body-item {
+    color: rgba(255, 255, 255, var(--tw-text-opacity));
+    --tw-text-opacity: 0.6;
+    font-weight: 300;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding: 0.25rem;
+    width: 2rem;
+  }
+
+  .table-body-name-item {
+    --tw-text-opacity: 1;
+    color: rgba(255, 255, 255, var(--tw-text-opacity));
+    font-weight: 300;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding: 0.25rem;
+    flex: 1 1 auto;
+  }
 }
 
 @layer base {
